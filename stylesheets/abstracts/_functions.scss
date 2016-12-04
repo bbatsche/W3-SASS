@@ -28,3 +28,21 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
+
+/// Return the framework namespace prefix (if defined) for a selector.
+///
+/// @param String $namespace [$namespace] - Framework namespace
+/// @example scss
+///   $namespace: "bb";
+///   prefix();
+///   // "bb-"
+///
+/// @example scss
+///   $namespace: null;
+///   prefix();
+///   // ""
+///
+/// @return String
+@function namespace($namespace: $namespace) {
+  @return if($namespace != "" and $namespace != null, $namespace + "-", "");
+}

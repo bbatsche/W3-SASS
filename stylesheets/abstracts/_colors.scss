@@ -1,0 +1,31 @@
+////
+/// Mixins and functions for handling framework colors.
+///
+/// @group Colors
+/// @author Ben Batschelet
+////
+
+/// Look up a color in the $swatches list by its name.
+///
+/// @param String $name                 - Name of swatch to retrieve.
+/// @param List   $swatches [$swatches] - List of swatches to look through.
+///
+/// @throws Error if the name doesn't exist in the list
+///
+/// @return Color
+@function swatch($name, $swatches: $swatches) {
+  @if not map-has-key($swatches, $name) {
+    @error "No swatch found for #{$name}.";
+  }
+
+  @return map-get($swatches, $name);
+}
+
+/// Add a border color to one or all sides of the element.
+///
+/// @param Color  $color       - Color to use
+/// @param String $side [null] - Side to add the color to (default adds color to all sides)
+@mixin border-color($color, $side: null) {
+  border#{if($side != null, "-" + $side, "")}-color: $color;
+}
+

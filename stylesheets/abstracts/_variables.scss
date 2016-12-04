@@ -69,3 +69,7 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+/// Default namespace for generated selectors.
+/// @type String
+$namespace: "w3" !default;

@@ -1,0 +1,41 @@
+////
+/// Generate standard and extend-only selectors applying foreground, border, and background colors.
+///
+/// @group Colors
+/// @author Ben Batschelet
+////
+
+@import "../abstracts/colors";
+@import "../variables/colors";
+
+@each $name, $color in $swatches {
+  /// Apply a named background color from the global $swatches
+  %background-#{"" + $name} {
+    background-color: $color;
+  }
+
+  /// Apply a named foreground color from the global $swatches
+  %foreground-#{"" + $name} {
+    color: $color;
+  }
+
+  /// Apply a named border color from the global $swatches
+  %border-#{"" + $name} {
+    @include border-color($color);
+  }
+
+  .#{namespace()}#{"" + $name},
+  .#{namespace()}hover-#{"" + $name}:hover {
+    @extend %background-#{"" + $name};
+  }
+
+  .#{namespace()}text-#{"" + $name},
+  .#{namespace()}hover-text-#{"" + $name}:hover {
+    @extend %foreground-#{"" + $name};
+  }
+
+  .#{namespace()}border-#{"" + $name},
+  .#{namespace()}hover-border-#{"" + $name}:hover {
+    @extend %border-#{"" + $name};
+  }
+}
