@@ -1,0 +1,33 @@
+{
+  "name": "w3.sass",
+  "version": "2.83.0",
+  "description": "A SASS port of W3Schools' W3.CSS",
+  "main": "dist/w3.css",
+  "style": "dist/w3.css",
+  "sass": "scss/w3.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "w3schools",
+    "sass",
+    "css"
+  ],
+  "repository": {
+      "type": "git",
+      "ulr": "https://github.com/bbatsche/W3-SASS.git"
+  },
+  "author": "Ben Batschelet <ben.batschelet@gmail.com> (https://github.com/bbatsche)",
+  "license": "MIT",
+  "dependencies": {
+    "breakpoint-sass": "~2.7",
+    "normalize-scss": "~6.0",
+    "sassdash": "~0.8",
+    "susy": "~2.2",
+    "typey": "~1.0"
+  },
+  "devDependencies": {
+    "sass-lint": "~1.10",
+    "sassytester": "^1.1.0"
+  }
+}
