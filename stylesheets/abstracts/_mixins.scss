@@ -40,3 +40,23 @@
     display: table;
   }
 }
+
+/// Add the lobomized owl margin trick to a given selector.
+///
+/// By default, will only apply it to the direct children.
+///
+/// @see http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+///
+/// @param {Length} $margin  [$default-margin] - How much margin to apply
+/// @param {Bool}   $direct-descendants [true] - Limit the scope to just direct children or all descendants.
+@mixin lobotomize-owls($margin: $default-margin, $direct-descendants: true) {
+  @if $direct-descendants {
+    > * + * {
+      margin-top: $margin;
+    }
+  } @else {
+    * + * {
+      margin-top: $margin;
+    }
+  }
+}
