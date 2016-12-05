@@ -5,6 +5,9 @@
 /// @author Ben Batschelet
 ////
 
+// Make sure we have access to the swatch() function
+@import "../abstracts/colors.scss";
+
 /// Default named swatches.
 /// @type List
 $swatches: (

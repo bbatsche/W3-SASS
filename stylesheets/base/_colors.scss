@@ -5,8 +5,8 @@
 /// @author Ben Batschelet
 ////
 
-@import "../abstracts/colors";
 @import "../variables/colors";
+@import "../abstracts/colors";
 
 @each $name, $color in $swatches {
   /// Apply a named background color from the global $swatches
